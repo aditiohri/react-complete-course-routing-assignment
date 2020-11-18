@@ -20,7 +20,7 @@ class App extends Component {
           <Route path="/users" component={Users} />
           <Route path="/courses" exact component={Courses} />
           <Route path="/course" component={Course} />
-          <ol style={{ textAlign: "left" }}>
+          <ol className="tasks">
             <li className="done">
               Add Routes to load "Users" and "Courses" on different pages (by
               entering a URL, without Links)
@@ -29,7 +29,7 @@ class App extends Component {
               Add a simple navigation with two links => One leading to "Users",
               one leading to "Courses"
             </li>
-            <li>
+            <li className="done">
               Make the courses in "Courses" clickable by adding a link and load
               the "Course" component in the place of "Courses" (without passing
               any data for now)
