@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, NavLink } from "react-router-dom";
+import { BrowserRouter, Route, NavLink, Switch } from "react-router-dom";
 
 import Courses from "./containers/Courses/Courses";
-import Course from './containers/Course/Course';
+import Course from "./containers/Course/Course";
 import Users from "./containers/Users/Users";
 
 class App extends Component {
@@ -17,9 +17,11 @@ class App extends Component {
             | <NavLink to="/users">Users</NavLink> |{" "}
             <NavLink to="/courses">Courses</NavLink>
           </nav>
-          <Route path="/users" component={Users} />
-          <Route path="/courses" exact component={Courses} />
-          <Route path="/course" component={Course} />
+          <Switch>
+            <Route path="/users" component={Users} />
+            <Route path="/courses" exact component={Courses} />
+            <Route path="/:id" exact component={Course} />
+          </Switch>
           <ol className="tasks">
             <li className="done">
               Add Routes to load "Users" and "Courses" on different pages (by
