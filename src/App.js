@@ -8,9 +8,9 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div>
           <ol style={{ textAlign: "left" }}>
-            <li>
+            <li className="done">
               Add Routes to load "Users" and "Courses" on different pages (by
               entering a URL, without Links)
             </li>
