@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, NavLink } from "react-router-dom";
 
 import Courses from "./containers/Courses/Courses";
+import Course from './containers/Course/Course';
 import Users from "./containers/Users/Users";
 
 class App extends Component {
@@ -10,18 +11,21 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <nav>
-<NavLink to="/" exact>Home</NavLink>{" "} | {" "}
-<NavLink to="/users">Users</NavLink>{" "} | {" "}
-<NavLink to="/courses">Courses</NavLink>
+            <NavLink to="/" exact>
+              Home
+            </NavLink>{" "}
+            | <NavLink to="/users">Users</NavLink> |{" "}
+            <NavLink to="/courses">Courses</NavLink>
           </nav>
           <Route path="/users" component={Users} />
-          <Route path="/courses" component={Courses} />
+          <Route path="/courses" exact component={Courses} />
+          <Route path="/course" component={Course} />
           <ol style={{ textAlign: "left" }}>
             <li className="done">
               Add Routes to load "Users" and "Courses" on different pages (by
               entering a URL, without Links)
             </li>
-            <li>
+            <li className="done">
               Add a simple navigation with two links => One leading to "Users",
               one leading to "Courses"
             </li>
