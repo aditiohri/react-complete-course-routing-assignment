@@ -19,8 +19,7 @@ class App extends Component {
           </nav>
           <Switch>
             <Route path="/users" component={Users} />
-            <Route path="/courses" exact component={Courses} />
-            <Route path="/:id" exact component={Course} />
+            <Route path="/courses" component={Courses} />
           </Switch>
           <ol className="tasks">
             <li className="done">
@@ -37,7 +36,7 @@ class App extends Component {
               any data for now)
             </li>
             <li className="done">Pass the course ID to the "Course" page and output it there</li>
-            <li>
+            <li className="done">
               Pass the course title to the "Course" page - pass it as a param or
               score bonus points by passing it as query params (you need to
               manually parse them though!)

@@ -13,34 +13,33 @@ class Courses extends Component {
     ],
   };
 
-  //   courseSelectedHandler = (id) => {
-  //     // this.props.history.push(`/courses/${id}`);
-  //     console.log(id);
-  //   };
+  courseSelectedHandler = (id) => {
+    this.props.history.push(`${this.props.match.url}/${id}`);
+    //   console.log(id);
+  };
 
   render() {
+    let courses = this.state.courses.map((course) => {
+      return (
+        <div
+        //   to={{
+        //     pathname: `${this.props.match.url}/${course.id}`,
+        //     hash: course.title,
+        //     search: course.title,
+        //   }}
+          className="Course"
+          key={course.id}
+          onClick={() => this.courseSelectedHandler(course.id)}
+        >
+          {course.title}
+        </div>
+      );
+    });
     return (
       <div>
         <h1>Amazing Udemy Courses</h1>
-        <section className="Courses">
-          {this.state.courses.map((course) => {
-            return (
-              <Link
-                to={{
-                  pathname: `/${course.id}`,
-                  hash: course.title,
-                  search: course.title,
-                }}
-                className="Course"
-                key={course.id}
-                // onClick={() => this.courseSelectedHandler(course.id)}
-              >
-                {course.title}
-              </Link>
-            );
-          })}
-          {/* <Route path={`${this.props.match.url}/:id`} exact component={Course} /> */}
-        </section>
+        <section className="Courses">{courses}</section>
+        <Route path={`${this.props.match.url}/:id`} component={Course} />
       </div>
     );
   }
