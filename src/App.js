@@ -36,7 +36,7 @@ class App extends Component {
               the "Course" component in the place of "Courses" (without passing
               any data for now)
             </li>
-            <li>Pass the course ID to the "Course" page and output it there</li>
+            <li className="done">Pass the course ID to the "Course" page and output it there</li>
             <li>
               Pass the course title to the "Course" page - pass it as a param or
               score bonus points by passing it as query params (you need to
