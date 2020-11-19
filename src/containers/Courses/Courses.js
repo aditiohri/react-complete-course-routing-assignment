@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 
 import "./Courses.css";
 import Course from "../Course/Course";
@@ -21,18 +21,18 @@ class Courses extends Component {
   render() {
     let courses = this.state.courses.map((course) => {
       return (
-        <div
-        //   to={{
-        //     pathname: `${this.props.match.url}/${course.id}`,
-        //     hash: course.title,
-        //     search: course.title,
-        //   }}
+        <Link
+          to={{
+            // pathname: `${this.props.match.url}/${course.id}`,
+            hash: course.title,
+            search: course.title,
+          }}
           className="Course"
           key={course.id}
           onClick={() => this.courseSelectedHandler(course.id)}
         >
           {course.title}
-        </div>
+        </Link>
       );
     });
     return (
