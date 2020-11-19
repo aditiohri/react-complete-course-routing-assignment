@@ -13,10 +13,10 @@ class Courses extends Component {
     ],
   };
 
-//   courseSelectedHandler = (id) => {
-//     // this.props.history.push(`/courses/${id}`);
-//     console.log(id);
-//   };
+  //   courseSelectedHandler = (id) => {
+  //     // this.props.history.push(`/courses/${id}`);
+  //     console.log(id);
+  //   };
 
   render() {
     return (
@@ -26,11 +26,11 @@ class Courses extends Component {
           {this.state.courses.map((course) => {
             return (
               <Link
-                to={{ pathname: `/${course.id}`, hash: course.title, /* 
-                
-                search: course.title 
-                */ 
-            }}
+                to={{
+                  pathname: `/${course.id}`,
+                  hash: course.title,
+                  search: course.title,
+                }}
                 className="Course"
                 key={course.id}
                 // onClick={() => this.courseSelectedHandler(course.id)}
