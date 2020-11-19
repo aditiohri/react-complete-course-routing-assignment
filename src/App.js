@@ -18,7 +18,7 @@ class App extends Component {
             <NavLink to="/courses">Courses</NavLink>
           </nav>
           <Switch>
-            <Route path="/" exact />
+            <Route path="/" exact render={() => <h1>Home</h1>}/>
             <Route path="/users" component={Users} />
             <Route path="/courses" component={Courses} />
             <Route path="/" render={() => <h1>404 Not Found</h1>} />
